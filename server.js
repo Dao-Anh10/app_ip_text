@@ -31,14 +31,14 @@ app.listen(port,
     }    
 );
 // use router
-// app.use('/api/iphone', ipRouter);
-app.get('/api', async function (req, res) {
-    try {
-        // const ip = await Iphone.find();
-        res.status(200).json(['Hello 344', await Iphone.find()])
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
+app.use('/api/iphone', ipRouter);
+// app.get('/api', async function (req, res) {
+//     try {
+//         // const ip = await Iphone.find();
+//         res.status(200).json(['Hello 344', await Iphone.find()])
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
+// });
 
 
