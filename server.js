@@ -30,6 +30,9 @@ app.listen(port,
 );
 
 // use router
-app.use('/api/iphone', ipRouter);
+// app.use('/api/iphone', ipRouter);\
+app.get('/', function (req, res) {
+    res.send('Hello JJSSS');
+});
 
 
