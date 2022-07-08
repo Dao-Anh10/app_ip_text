@@ -37,7 +37,8 @@ let ipController = {
     getIp: async function (req, res) {
         try {
             // const ip = await Iphone.find();
-            res.status(200).json(await Iphone.find())
+            // res.status(200).json(await Iphone.find())
+            res.status(200).json('Hello jsss')
         } catch (err) {
             res.status(500).json(err);
         }
