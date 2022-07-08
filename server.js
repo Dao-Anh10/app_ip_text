@@ -6,6 +6,8 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
 
+const { Iphone } = require('./models/iphoneModel');
+
 const port = process.env.PORT || 3000;
 const ipRouter = require('./routers/iphoneRouter');
 dotenv.config();
@@ -28,11 +30,15 @@ app.listen(port,
         console.log('Server is running at port: ' + port);
     }    
 );
-
 // use router
-app.use('/api/iphone', ipRouter);
-// app.get('/api', function (req, res) {
-//     res.send('Hello JJSSS');
-// });
+// app.use('/api/iphone', ipRouter);
+app.get('/api', async function (req, res) {
+    try {
+        // const ip = await Iphone.find();
+        res.status(200).json(['Hello 344', await Iphone.find()])
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 
 
